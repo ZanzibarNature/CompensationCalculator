@@ -18,3 +18,8 @@ Endpoint: http://0.0.0.0:8080/getCompensationAmount
 
 Example Request
 ![Alt text](image.png)
+
+Resources:
+List with currencies: https://fxratesapi.com/docs/currency-list 
+
+List with IATA codes: https://www.nationsonline.org/oneworld/IATA_Codes/airport_code_list.htm
