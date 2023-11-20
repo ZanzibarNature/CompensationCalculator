@@ -13,12 +13,13 @@ app = Flask(__name__)
 load_dotenv()
 
 
-@app.route("/getCompensationAmount", methods=["POST"])
+@app.route("/getCompensationAmount", methods=["GET"])
 def GetCompensationAmount():
-    data = request.get_json()
-    distance = GetDistance(data["iataFrom"], data["iataTo"])
+    args = request.args
+    
+    distance = GetDistance(args.get("iataFrom"), args.get("iataTo"))
 
-    return jsonify(CalculateCompensation(distance, data))
+    return jsonify(CalculateCompensation(distance, args.get("toCurrency")))
 
 
 def GetDistance(iataFrom, iataTo):
@@ -41,19 +42,19 @@ def GetDistance(iataFrom, iataTo):
     return distance
 
 
-def CalculateCompensation(distance, data):
+def CalculateCompensation(distance, toCurrency):
     co2Footprint = distance * 171 / 1000
     costerPerKM = 0.0046575
 
-    if (data["toCurrency"] != "EUR"):
+    if (toCurrency != "EUR"):
         totalCost = ConvertCurrency(
-            "EUR", data["toCurrency"], (distance * costerPerKM))
+            "EUR", toCurrency, (distance * costerPerKM))
     else:
         totalCost = distance * costerPerKM
 
     output = {"co2FootprintInKG": round(co2Footprint, 2),
               "totalCost": round(totalCost, 2),
-              "currency": data["toCurrency"]}
+              "currency": toCurrency}
 
     return output
 

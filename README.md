@@ -19,7 +19,7 @@ Docker
 Endpoint: http://0.0.0.0:8080/getCompensationAmount
 
 Example Request
-![Alt text](image.png)
+![Alt text](examplerequest.png)
 
 Resources:
 List of currencies: https://fxratesapi.com/docs/currency-list 
