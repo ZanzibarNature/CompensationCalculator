@@ -22,6 +22,6 @@ Example Request
 ![Alt text](image.png)
 
 Resources:
-List with currencies: https://fxratesapi.com/docs/currency-list 
+List of currencies: https://fxratesapi.com/docs/currency-list 
 
-List with IATA codes: https://www.nationsonline.org/oneworld/IATA_Codes/airport_code_list.htm
+List of IATA codes: https://www.nationsonline.org/oneworld/IATA_Codes/airport_code_list.htm
