@@ -1,12 +1,16 @@
 # CompensationCalculator
+Python 3.12.0
+
 Quick Start:
 
 Local Development
-1. Navigate to app directory in your terminal
-2. Use the command - pip3 install -r requirements.txt
+1. In the root directory create a venv with the command - python3 -m venv .venv  
+2. In vscode switch the interperter to venv
+3. Run the command - source .venv/bin/activate;2D 
+2. Run the command - pip3 install -r requirements.txt
 3. Rename the .env.example to .env
 4. Fill in the rapid api key in the .env file. (This is not needed in dev_mode, it will use the exampleflight.json instead)
-5. Use the command - flask run
+5. Run the command - flask run
 
 Endpoint: http://127.0.0.1:5000/getCompensationAmount
 
