@@ -15,12 +15,12 @@ Local Development
 Endpoint: http://127.0.0.1:5000/getCompensationAmount
 
 Docker
-1. Rename the .env.example to .env
-2. Fill in the rapid api key in the .env file. (This is not needed in dev_mode, it will use the exampleflight.json instead)
-3. In the root directory use the command - docker build -t co2calc . 
-2. After the build is complete run the command - docker run -p 8080:8080 co2calc
+1. Rename docker-compose.yml.example
+2. Fill in the rapid-api key in the docker-compose file
+3. Run - docker-compose build 
+4. Run - docker-compose up -d
 
-Endpoint: http://0.0.0.0:8080/getCompensationAmount
+Endpoint: localhost/getCompensationAmount
 
 Example Request
 ![Alt text](examplerequest.png)
