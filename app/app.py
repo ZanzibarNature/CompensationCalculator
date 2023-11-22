@@ -17,7 +17,7 @@ load_dotenv()
 def GetCompensationAmount():
     args = request.args
     distance = GetDistance(args.get("iataFrom"), args.get("iataTo"))
-
+    
     return jsonify(CalculateCompensation(distance, args.get("toCurrency")))
 
 
