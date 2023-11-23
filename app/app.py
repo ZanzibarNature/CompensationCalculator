@@ -5,10 +5,6 @@ from dotenv import load_dotenv
 from service.DistanceService import DistanceService
 from service.CompensationService import CompensationService
 
-import os
-import json
-
-
 app = Flask(__name__)
 load_dotenv()
 
