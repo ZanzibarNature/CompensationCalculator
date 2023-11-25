@@ -28,6 +28,7 @@ jobs:
             python -m pytest ./app/tests/unit
   docker:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       -
         name: Set up QEMU
