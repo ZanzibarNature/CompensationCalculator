@@ -1,0 +1,358 @@
+{
+    "points": [
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "iata",
+                "geocode": {
+                    "name": "Amsterdam Airport Schiphol",
+                    "icao": "EHAM",
+                    "iata": "AMS",
+                    "lat": 52.3086,
+                    "lng": 4.76389,
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "iso_alpha2": "NL",
+                    "alt": -11,
+                    "tz": "Europe/Amsterdam",
+                    "regions": [
+                        {
+                            "id": 2323309,
+                            "name": "Nederland",
+                            "int": "Nederland",
+                            "name_en": "The Netherlands",
+                            "level": 2
+                        },
+                        {
+                            "id": 47796,
+                            "name": "Nederland",
+                            "int": "Nederland",
+                            "name_en": "Netherlands",
+                            "level": 3
+                        },
+                        {
+                            "id": 47654,
+                            "name": "Noord-Holland",
+                            "int": "North Holland",
+                            "name_en": "North Holland",
+                            "level": 4
+                        },
+                        {
+                            "id": 443890,
+                            "name": "Haarlemmermeer",
+                            "int": "Haarlemmermeer",
+                            "name_en": null,
+                            "level": 8
+                        },
+                        {
+                            "id": 1883613,
+                            "name": "Schiphol",
+                            "int": "Schiphol",
+                            "name_en": null,
+                            "level": 10
+                        }
+                    ]
+                },
+                "airports": [
+                    {
+                        "name": "Amsterdam Airport Schiphol",
+                        "icao": "EHAM",
+                        "iata": "AMS",
+                        "lat": 52.3086,
+                        "lng": 4.76389,
+                        "city": "Amsterdam",
+                        "country": "Netherlands",
+                        "distance": 0
+                    },
+                    {
+                        "name": "Amsterdam Airport Schiphol",
+                        "icao": "EHAM",
+                        "iata": "AMS",
+                        "lat": 52.3086,
+                        "lng": 4.76389,
+                        "city": "Amsterdam",
+                        "country": "Netherlands",
+                        "distance": 0
+                    },
+                    {
+                        "name": "Valkenburg Naval Air Base",
+                        "icao": "EHVB",
+                        "iata": "LID",
+                        "lat": 52.1661,
+                        "lng": 4.41794,
+                        "city": "Valkenburg",
+                        "country": "Netherlands",
+                        "distance": 28.399439179664704
+                    }
+                ],
+                "stats": {
+                    "antipodia": [
+                        -175.23611,
+                        -52.3086
+                    ],
+                    "equator": {
+                        "distance": 5818.276854473782,
+                        "bearing": "S"
+                    },
+                    "northpole": 4192.408136190094,
+                    "southpole": 15830.070283912357
+                }
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    4.76389,
+                    52.3086
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "type": "iata",
+                "geocode": {
+                    "name": "Abeid Amani Karume International Airport",
+                    "icao": "HTZA",
+                    "iata": "ZNZ",
+                    "lat": -6.22202,
+                    "lng": 39.2249,
+                    "city": "Zanzibar",
+                    "country": "Tanzania",
+                    "iso_alpha2": "TZ",
+                    "alt": 54,
+                    "tz": "Africa/Dar_es_Salaam",
+                    "regions": [
+                        {
+                            "id": 195270,
+                            "name": "Tanzania",
+                            "int": "Tanzania",
+                            "name_en": "Tanzania",
+                            "level": 2
+                        },
+                        {
+                            "id": 3775035,
+                            "name": "Zanzibar",
+                            "int": "Zanzibar",
+                            "name_en": "Zanzibar",
+                            "level": 3
+                        },
+                        {
+                            "id": 1614023,
+                            "name": "Unguja Mjini Magharibi",
+                            "int": "Zanzibar Urban/West",
+                            "name_en": "Zanzibar Urban/West",
+                            "level": 4
+                        }
+                    ]
+                },
+                "airports": [
+                    {
+                        "name": "Abeid Amani Karume International Airport",
+                        "icao": "HTZA",
+                        "iata": "ZNZ",
+                        "lat": -6.22202,
+                        "lng": 39.2249,
+                        "city": "Zanzibar",
+                        "country": "Tanzania",
+                        "distance": 0
+                    },
+                    {
+                        "name": "Abeid Amani Karume International Airport",
+                        "icao": "HTZA",
+                        "iata": "ZNZ",
+                        "lat": -6.22202,
+                        "lng": 39.2249,
+                        "city": "Zanzibar",
+                        "country": "Tanzania",
+                        "distance": 0
+                    },
+                    {
+                        "name": "Julius Nyerere International Airport",
+                        "icao": "HTDA",
+                        "iata": "DAR",
+                        "lat": -6.87811,
+                        "lng": 39.2026,
+                        "city": "Dar Es Salaam",
+                        "country": "Tanzania",
+                        "distance": 73.01837432437011
+                    }
+                ],
+                "stats": {
+                    "antipodia": [
+                        -140.7751,
+                        6.22202
+                    ],
+                    "equator": {
+                        "distance": 692.0742469512271,
+                        "bearing": "N"
+                    },
+                    "northpole": 10702.759237615104,
+                    "southpole": 9319.47228903256
+                }
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.2249,
+                    -6.22202
+                ]
+            }
+        }
+    ],
+    "steps": [
+        {
+            "start": [
+                4.76389,
+                52.3086
+            ],
+            "end": [
+                39.2249,
+                -6.22202
+            ],
+            "distance": {
+                "haversine": 7280.74558518597,
+                "greatCircle": 7278.470994810935,
+                "vincenty": 7260.7724100000005,
+                "radians": 1.1424361501939386,
+                "dagrees": 65.45676976928651,
+                "flight": [
+                    {
+                        "start": "AMS",
+                        "dest": "ZNZ",
+                        "distance": 7280.74558518597,
+                        "time": "9h 3min"
+                    },
+                    {
+                        "start": "AMS",
+                        "dest": "ZNZ",
+                        "distance": 7280.74558518597,
+                        "time": "9h 3min"
+                    },
+                    {
+                        "start": "AMS",
+                        "dest": "DAR",
+                        "distance": 7347.3337197103,
+                        "time": "9h 8min"
+                    },
+                    {
+                        "start": "AMS",
+                        "dest": "ZNZ",
+                        "distance": 7280.74558518597,
+                        "time": "9h 3min"
+                    },
+                    {
+                        "start": "AMS",
+                        "dest": "ZNZ",
+                        "distance": 7280.74558518597,
+                        "time": "9h 3min"
+                    },
+                    {
+                        "start": "AMS",
+                        "dest": "DAR",
+                        "distance": 7347.3337197103,
+                        "time": "9h 8min"
+                    },
+                    {
+                        "start": "LID",
+                        "dest": "ZNZ",
+                        "distance": 7282.957703492645,
+                        "time": "9h 4min"
+                    },
+                    {
+                        "start": "LID",
+                        "dest": "ZNZ",
+                        "distance": 7282.957703492645,
+                        "time": "9h 4min"
+                    },
+                    {
+                        "start": "LID",
+                        "dest": "DAR",
+                        "distance": 7349.399043923281,
+                        "time": "9h 8min"
+                    }
+                ]
+            },
+            "midpoint": {
+                "type": "Feature",
+                "properties": {
+                    "type": "latlng",
+                    "geocode": {},
+                    "tz": "Africa/Cairo",
+                    "regions": [
+                        {
+                            "id": 1473947,
+                            "name": "مصر",
+                            "int": "Egypt مصر",
+                            "name_en": "Egypt",
+                            "level": 2
+                        },
+                        {
+                            "id": 3061827,
+                            "name": "الوادي الجديد",
+                            "int": "New Valley Governorate",
+                            "name_en": "New Valley Governorate",
+                            "level": 4
+                        }
+                    ],
+                    "airports": [
+                        {
+                            "name": "Shark El Oweinat International Airport",
+                            "icao": "HEOW",
+                            "iata": "GSQ",
+                            "lat": 22.5857,
+                            "lng": 28.7166,
+                            "city": "Sharq Al-Owainat",
+                            "country": "Egypt",
+                            "distance": 296.5057848844786
+                        },
+                        {
+                            "name": "Shark El Oweinat International Airport",
+                            "icao": "HEOW",
+                            "iata": "GSQ",
+                            "lat": 22.5857,
+                            "lng": 28.7166,
+                            "city": "Sharq Al-Owainat",
+                            "country": "Egypt",
+                            "distance": 296.5057848844786
+                        },
+                        {
+                            "name": "Kufra Airport",
+                            "icao": "HLKF",
+                            "iata": "AKF",
+                            "lat": 24.1787,
+                            "lng": 23.314,
+                            "city": "Kufra",
+                            "country": "Libya",
+                            "distance": 296.48754276353804
+                        }
+                    ],
+                    "stats": {
+                        "antipodia": [
+                            -153.77766216772667,
+                            -23.948014777701538
+                        ],
+                        "equator": {
+                            "distance": 2663.7336899037055,
+                            "bearing": "S"
+                        },
+                        "northpole": 7346.951300760172,
+                        "southpole": 12675.41641380257
+                    }
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        26.222337832273325,
+                        23.948014777701538
+                    ]
+                }
+            },
+            "bearing": {
+                "exact": "SE",
+                "rough": "E",
+                "bearing": 141.8017575008643
+            },
+            "time": 2
+        }
+    ]
+}

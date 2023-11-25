@@ -1,5 +1,6 @@
 from requests import Request
 import requests
+import re
 
 class CompensationService:
     def __init__(self):
@@ -9,6 +10,9 @@ class CompensationService:
         averageCo2PerKM = 171
         co2Footprint = distance * averageCo2PerKM / 1000
         costerPerKM = 0.0046575
+        
+        self.patternCurrency(toCurrency)
+        self.patternDistance(distance)
 
         if (toCurrency != "EUR"):
             totalCost = self.ConvertCurrency(
@@ -36,3 +40,15 @@ class CompensationService:
             return convertedAmount
         else:
             return False
+    
+    def patternDistance(self, distance):
+        patternDistance = r"^[0-9.]+$"
+        if(not re.match(patternDistance, str(distance))):
+            raise Exception("Invalid input")
+        return True
+    
+    def patternCurrency(self, currency):
+        patternCurrency = r'^[a-zA-Z]+$'
+        if(not re.match(patternCurrency, str(currency))):
+            raise Exception("Invalid input")
+        return True
