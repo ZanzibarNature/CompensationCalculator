@@ -14,7 +14,8 @@ def GetCompensationAmount():
     compensationService = CompensationService()
 
     args = request.args
-    distance = distanceService.GetDistance( args.get("iataFrom").upper(), args.get("iataTo").upper())
+    distance = distanceService.GetDistance( args.get("lonFrom"), args.get("latFrom").upper(), 
+                                            args.get("lonTo"), args.get(""))
     
     return jsonify(compensationService.CalculateCompensation(distance, args.get("toCurrency").upper()))
 
