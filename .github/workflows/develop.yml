@@ -32,6 +32,9 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+      - name: list files
+        run: |
+          ls 
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -55,7 +58,7 @@ jobs:
         name: Build and push Nginx
         uses: docker/build-push-action@v5
         with:
-          context: /nginx
+          context: ./nginx
           push: true
           platforms: linux/amd64,linux/arm64
           tags: zanzibarinh/compensation-nginx:latest
