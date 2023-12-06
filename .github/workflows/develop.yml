@@ -43,9 +43,17 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build and push
+        name: Build and push Compensation Calculator
         uses: docker/build-push-action@v5
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: meems/compensationcalculator:latest
+          tags: zanzibarinh/compensation-calculator:latest
+      -
+        name: Build and push Nginx
+        uses: docker/build-push-action@v5
+        with:
+          context: ./nginx
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: zanzibarinh/compensation-nginx:latest
