@@ -1,0 +1,13 @@
+version: '3'
+services:
+  compensationcalculator:
+    image: meems/compensationcalculator:latest
+  web:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - compensationcalculator
+    
