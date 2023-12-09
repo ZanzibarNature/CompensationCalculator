@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c
+    kompose.version: 1.31.2 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: compensationcalculator
+  name: compensationcalculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: compensationcalculator
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -c
+        kompose.version: 1.31.2 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/compensationcalculator-default: "true"
+        io.kompose.service: compensationcalculator
+    spec:
+      containers:
+        - image: zanzibarinh/compensation-calculator:latest
+          name: compensationcalculator
+          resources: {}
+      restartPolicy: Always
+status: {}

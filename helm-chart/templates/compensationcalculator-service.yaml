@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c
+    kompose.version: 1.31.2 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: compensationcalculator
+  name: compensationcalculator
+spec:
+  ports:
+    - name: "http"
+      port: 80
+      targetPort: 8000
+    - name: "https"
+      port: 443
+      targetPort: 8000
+  selector:
+    io.kompose.service: compensationcalculator
+status:
+  loadBalancer: {}

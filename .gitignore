@@ -49,11 +49,3 @@ package.nls.*.json
 l10n/
 .env
 docker-compose.yml
-compensationcalculator-deployment.yaml
-compensationcalculator-service.yaml
-compensationcalculator-deploymentconfig.yaml
-compensationcalculator-imagestream.yaml
-web-claim0-persistentvolumeclaim.yaml
-web-deploymentconfig.yaml
-web-imagestream.yaml
-web-service.yaml
