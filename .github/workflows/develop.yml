@@ -61,11 +61,11 @@ jobs:
           tags: zanzibarinh/compensation-nginx:latest
   deploy:
     runs-on: ubuntu-latest
-    # needs: docker
+    needs: docker
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-
+        
       - name: Set up OpenShift CLI
         uses: redhat-actions/oc-login@v1
         with:
