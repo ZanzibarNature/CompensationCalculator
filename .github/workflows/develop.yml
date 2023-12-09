@@ -59,3 +59,24 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: zanzibarinh/compensation-nginx:latest
+  deploy:
+    runs-on: ubuntu-latest
+    needs: docker
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up OpenShift CLI
+        uses: redhat-actions/oc-login@v1
+        with:
+          openshift_server_url: ${{ secrets.OPENSHIFT_SERVER_URL }}
+          openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
+          insecure_skip_tls_verify: true
+          namespace: kawa-foundation-app-dev
+      - name: Set up Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: 'v3'
+      - name: Deploy with Helm
+        run: |
+            helm upgrade --install compensation-calculator ./charts
