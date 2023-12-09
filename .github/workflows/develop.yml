@@ -65,7 +65,7 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-        
+
       - name: Set up OpenShift CLI
         uses: redhat-actions/oc-login@v1
         with:
@@ -75,6 +75,8 @@ jobs:
           namespace: kawa-foundation-app-dev
       - name: Set up Helm
         uses: azure/setup-helm@v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy with Helm
         run: |
