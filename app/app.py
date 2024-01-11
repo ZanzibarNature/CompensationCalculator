@@ -2,6 +2,7 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from dotenv import load_dotenv
+from prometheus_flask_exporter import PrometheusMetrics
 from service.DistanceService import DistanceService
 from service.CompensationService import CompensationService
 from flasgger import Swagger
@@ -9,6 +10,11 @@ from flasgger import Swagger
 app = Flask(__name__)
 swagger = Swagger(app)
 load_dotenv()
+
+metrics = PrometheusMetrics(app)
+
+# static information as metric
+metrics.info('app_info', 'Application info', version='1.0.0')
 
 @app.route("/getCompensationAmount", methods=["GET"])
 def GetCompensationAmount():
