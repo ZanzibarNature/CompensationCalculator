@@ -11,8 +11,11 @@ class CompensationService:
         co2Footprint = distance * averageCo2PerKM / 1000
         costerPerKM = 0.0046575
         
-        self.patternCurrency(toCurrency)
-        self.patternDistance(distance)
+        try:
+            self.patternDistance(distance)
+            self.patternCurrency(toCurrency)
+        except:
+            return response.status_code(500)
 
         if (toCurrency != "EUR"):
             totalCost = self.ConvertCurrency(
@@ -31,7 +34,10 @@ class CompensationService:
         url = "https://api.fxratesapi.com/convert?from={}&to={}&amount={}&format=json".format(
             fromCurrency, toCurrency, amount)
 
-        response = requests.get(url)
+        try:
+            response = requests.get(url)
+        except:
+            return response.status_code(500)
 
         if response.status_code == 200:
             responseJson = response.json()
@@ -39,7 +45,7 @@ class CompensationService:
 
             return convertedAmount
         else:
-            return False
+            return response.status_code(500)
     
     def patternDistance(self, distance):
         patternDistance = r"^[0-9.]+$"
