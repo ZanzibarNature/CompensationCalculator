@@ -62,12 +62,20 @@ def GetCompensationAmount():
     """
     distanceService = DistanceService()
     compensationService = CompensationService()
-
-    args = request.args
-    distance = distanceService.GetDistance( args.get("lonFrom"), args.get("latFrom"), 
-                                            args.get("lonTo"), args.get("latTo"))
     
-    return jsonify(compensationService.CalculateCompensation(distance, args.get("toCurrency").upper()))
+    args = request.args
+    required_headers = ["lonFrom", "latFrom", "lonTo", "latTo", "toCurrency"]
+    missing_headers = [header for header in required_headers if header not in args]
+    if missing_headers:
+      return jsonify({"error": f"Missing headers: {', '.join(missing_headers)}"}), 400
+    
+    try:
+        distance = distanceService.GetDistance(args.get("lonFrom"), args.get("latFrom"), 
+                        args.get("lonTo"), args.get("latTo"))
+        return jsonify(compensationService.CalculateCompensation(distance, args.get("toCurrency").upper()))
+    except:
+        return jsonify({"error": "Calculation failed"}), 400
+      
 
 
 

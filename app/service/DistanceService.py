@@ -1,6 +1,7 @@
 from requests import Request
 from geopy.distance import geodesic
 
+
 class DistanceService:
     def __init__(self):
         pass
@@ -11,8 +12,11 @@ class DistanceService:
     def GetDistance(self, lonFrom, latFrom, lonTo, latTo):
         fromPlace = (lonFrom, latFrom)
         toPlace = (lonTo, latTo)
-        
-        return round(geodesic(fromPlace, toPlace).km)
+        try:
+            distance = round(geodesic(fromPlace, toPlace).km)
+            return distance
+        except:
+            raise Exception("Distance calculation failed")
           
     
     # def patternIata(self, iata):
