@@ -77,7 +77,7 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: 
+          tags: |
             zanzibarinh/compensation-calculator:latest
             zanzibarinh/compensation-calculator:${{ steps.increment-patch-version.outputs.version }}
       # -
