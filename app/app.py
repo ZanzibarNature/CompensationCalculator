@@ -78,7 +78,7 @@ def GetCompensationAmount():
       
 @app.route("/test", methods=["GET"])
 def Test():
-    return jsonify({"test": "test"})
+    return jsonify({"test": "now updates patch"})
       
 
 
