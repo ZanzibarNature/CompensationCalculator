@@ -25,7 +25,7 @@ spec:
         io.kompose.service: compensation
     spec:
       containers:
-        - image: zanzibarinh/compensation-nginx:{{.Values.version}}
+        - image: zanzibarinh/compensation-nginx:latest
           name: compensation
           resources: {}
       restartPolicy: Always

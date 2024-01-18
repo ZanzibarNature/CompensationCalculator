@@ -63,11 +63,6 @@ jobs:
         id: set_var
         run: echo "version=${{ steps.increment-patch-version.outputs.version }}" >> $GITHUB_ENV
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: my-artifact
-          path: ${{ runner.workspace }}
       - 
         name: Commit and push new version
         run: |
@@ -82,27 +77,25 @@ jobs:
         with:
           push: true
           platforms: linux/amd64,linux/arm64
-          tags: zanzibarinh/compensation-calculator:${{ steps.increment-patch-version.outputs.version }}
-      -
-        name: Build and push Nginx
-        uses: docker/build-push-action@v5
-        with:
-          context: ./nginx
-          push: true
-          platforms: linux/amd64,linux/arm64
-          tags: zanzibarinh/compensation-nginx:${{ steps.increment-patch-version.outputs.version }}
+          tags: 
+            zanzibarinh/compensation-calculator:latest
+            zanzibarinh/compensation-calculator:${{ steps.increment-patch-version.outputs.version }}
+      # -
+      #   name: Build and push Nginx
+      #   uses: docker/build-push-action@v5
+      #   with:
+      #     context: ./nginx
+      #     push: true
+      #     platforms: linux/amd64,linux/arm64
+      #     tags: 
+      #       zanzibarinh/compensation-nginx:latest
+      #       zanzibarinh/compensation-nginx:${{ steps.increment-patch-version.outputs.version }}
   deploy:
     runs-on: ubuntu-latest
     needs: docker
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-        
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: my-artifact
-          path: ${{ runner.workspace }}
 
       - name: Set up OpenShift CLI
         uses: redhat-actions/oc-login@v1
@@ -111,6 +104,7 @@ jobs:
           openshift_token: ${{ secrets.OPENSHIFT_TOKEN }}
           insecure_skip_tls_verify: true
           namespace: kawa-foundation-app-dev
+
       - name: Set up Helm
         uses: azure/setup-helm@v3
         with:
