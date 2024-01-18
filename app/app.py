@@ -76,6 +76,10 @@ def GetCompensationAmount():
     except:
         return jsonify({"error": "Calculation failed"}), 400
       
+@app.route("/test", methods=["GET"])
+def Test():
+    return jsonify({"test": "test"})
+      
 
 
 
