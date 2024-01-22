@@ -6,8 +6,8 @@ metadata:
     kompose.version: 1.31.2 (HEAD)
   creationTimestamp: null
   labels:
-    io.kompose.service: compensation
-  name: compensation
+    io.kompose.service: compensation{{.Values.environment}} 
+  name: compensation{{.Values.environment}} 
 spec:
   ports:
     - name: "http"
@@ -17,6 +17,6 @@ spec:
       port: 443
       targetPort: 8080
   selector:
-    io.kompose.service: compensation
+    io.kompose.service: compensation{{.Values.environment}} 
 status:
   loadBalancer: {}

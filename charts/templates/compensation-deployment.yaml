@@ -6,13 +6,13 @@ metadata:
     kompose.version: 1.31.2 (HEAD)
   creationTimestamp: null
   labels:
-    io.kompose.service: compensation
-  name: compensation
+    io.kompose.service: compensation{{.Values.environment}} 
+  name: compensation{{.Values.environment}} 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: compensation
+      io.kompose.service: compensation{{.Values.environment}} 
   strategy: {}
   template:
     metadata:
@@ -22,11 +22,27 @@ spec:
       creationTimestamp: null
       labels:
         io.kompose.network/compensationcalculator-default: "true"
-        io.kompose.service: compensation
+        io.kompose.service: compensation{{.Values.environment}} 
     spec:
       containers:
         - image: zanzibarinh/compensation-nginx:latest
-          name: compensation
+          name: compensation{{.Values.environment}} 
           resources: {}
       restartPolicy: Always
-status: {}
+---
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: compensation{{.Values.environment}}-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: compensation{{.Values.environment}} 
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 50
