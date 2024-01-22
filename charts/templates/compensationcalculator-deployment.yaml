@@ -30,7 +30,7 @@ spec:
           resources: {}
       restartPolicy: Always
 ---
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: compensationcalculator{{.Values.environment}}-hpa
