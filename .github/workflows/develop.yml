@@ -114,6 +114,6 @@ jobs:
 
       - name: Deploy with Helm
         run: |
-            helm upgrade --install compensation-calculator --set version=1.1.7 --set namespace="-dev" ./charts
+            helm upgrade --install compensation-calculator --set version=${{ needs.docker.outputs.version }} ./helm
             
             
