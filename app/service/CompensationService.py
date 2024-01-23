@@ -6,7 +6,7 @@ class CompensationService:
     def __init__(self):
         pass
 
-    def CalculateCompensation(self, distance, toCurrency):
+    def CalculateCompensation(self, distance, toCurrency = "EUR"):
         averageCo2PerKM = 171
         co2Footprint = distance * averageCo2PerKM / 1000
         costerPerKM = 0.0046575

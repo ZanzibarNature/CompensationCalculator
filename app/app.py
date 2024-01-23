@@ -40,7 +40,6 @@ def GetCompensationAmount():
       - name: toCurrency
         in: query
         type: string
-        required: true
     responses:
         200:
             description: Compensation amount
