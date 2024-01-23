@@ -71,7 +71,12 @@ def GetCompensationAmount():
     try:
         distance = distanceService.GetDistance(args.get("lonFrom"), args.get("latFrom"), 
                         args.get("lonTo"), args.get("latTo"))
-        return jsonify(compensationService.CalculateCompensation(distance, args.get("toCurrency").upper()))
+        
+        if "toCurrency" not in args:
+          return jsonify(compensationService.CalculateCompensation(distance))
+        else:
+          return jsonify(compensationService.CalculateCompensation(distance, args.get("toCurrency").upper())) 
+        
     except:
         return jsonify({"error": "Calculation failed"}), 400
       
