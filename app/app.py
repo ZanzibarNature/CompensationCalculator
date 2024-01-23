@@ -63,7 +63,7 @@ def GetCompensationAmount():
     compensationService = CompensationService()
     
     args = request.args
-    required_headers = ["lonFrom", "latFrom", "lonTo", "latTo", "toCurrency"]
+    required_headers = ["lonFrom", "latFrom", "lonTo", "latTo"]
     missing_headers = [header for header in required_headers if header not in args]
     if missing_headers:
       return jsonify({"error": f"Missing headers: {', '.join(missing_headers)}"}), 400
